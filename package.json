@@ -1,14 +1,16 @@
 {
-  "name": "react-leaflet-load-georaster",
+  "name": "react-leaflet-load-geodata",
   "version": "1.0.1",
   "private": true,
-  "description": "react-leaflet-load-georaster",
-  "homepage": "https://github.com/aviklai/react-leaflet-load-georaster",
+  "description": "react-leaflet-load-geodata",
+  "homepage": "https://github.com/aviklai/react-leaflet-load-geodata",
   "keywords": [
     "leaflet",
     "georaster",
     "tiff",
-    "geotiff"
+    "geotiff",
+    "geojson",
+    "shapefile"
   ],
   "main": "index.js",
   "scripts": {

@@ -1,9 +1,9 @@
-# react-leaflet-load-georaster
+# react-leaflet-load-geodata
 
-Loading a georaster (such as GeoTIFF) on a react-leaflet map
+Loading geodata (such as GeoTIFF, shapefiles, zipped shapfiles, geojsons) on a react-leaflet map
 
 ## Demo
-https://react-leaflet-load-georaster.netlify.com
+https://react-leaflet-load-geodata.netlify.com
 
 ## Installing
 ```
