@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+}
+
+.header {
+  height: 30px;
+  padding: 10px 0 10px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.headerLoader {
+  align-self: center;
+  margin-left: 50px;
+}
+
+.headerSwitch {
+  margin: 10px 10px 0 auto;
+  display: flex;
+}
+
+.toggleLayerText {
+  align-self: center;
+  margin-right: 5px;
+}
+
+.removeLayer {
+  align-self: center;
+  margin-left: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mainContainer {
+  width: 100%;  
+  display: flex;
+}
+
+.leftSidebar {
+  width: 250px;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.layersHeader {
+  font-size: 20px;
+  text-decoration: underline;
+}
