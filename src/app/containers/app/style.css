@@ -14,6 +14,12 @@ body {
   margin-left: 50px;
 }
 
+.headerError {
+  align-self: center;
+  margin-left: 50px;
+  color: #FF0000;
+}
+
 .headerSwitch {
   margin: 10px 10px 0 auto;
   display: flex;

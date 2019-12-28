@@ -24,6 +24,7 @@ const App: React.FC = () => {
   const mapRef = useRef<any>(null);
   const [zoomPosition, setZoomPosition] = useState<any>({zoom: 12, position: L.latLng(32.0461, 34.8516)});
   const [showLoader, setShowLoader] = useState(false);
+  const [showError, setShowError] = useState(false);
   const [overlays, setOverlays] = useState<any>([]);
   
   
@@ -48,13 +49,19 @@ const App: React.FC = () => {
 
   async function onDrop(e: React.DragEvent<HTMLDivElement>) {
     e.preventDefault();
+    setShowError(false);
     setShowLoader(true);
-    const files = e!.dataTransfer.files;
-    const parser = createParser(files, mapRef);
-    const layerData = await parser.createLayer()
-    setZoomPosition({ zoom: layerData.zoom, position: layerData.center });
-    setOverlays((ovelays: any) => [...ovelays, {show: true, data: layerData, id: uuidv4()}]);
-    setShowLoader(false);    
+    try{
+      const files = e!.dataTransfer.files;
+      const parser = createParser(files, mapRef);
+      const layerData = await parser.createLayer()
+      setZoomPosition({ zoom: layerData.zoom, position: layerData.center });
+      setOverlays((ovelays: any) => [...ovelays, {show: true, data: layerData, id: uuidv4()}]);
+    }catch {
+      setShowError(true);
+    }finally{
+      setShowLoader(false);  
+    }
   }
 
   function pointToLayer(feature: any, latlng: any) {
@@ -79,7 +86,12 @@ const App: React.FC = () => {
           <div className={styles.headerLoader}>
             <Loader type="ThreeDots" color="#00BFFF" height={30} width={50} />
           </div>
-        )}        
+        )}  
+        {showError && (
+          <div className={styles.headerError}>
+            Invalid file/s
+          </div>
+        )}      
       </div>
       <div className={styles.mainContainer}>
         <div className={styles.leftSidebar}>
