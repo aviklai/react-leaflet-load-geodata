@@ -32,7 +32,7 @@ body {
 
 .removeLayer {
   align-self: center;
-  margin-left: 5px;
+  margin-left: 20px;
   text-decoration: underline;
   cursor: pointer;
 }
