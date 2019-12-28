@@ -17,4 +17,4 @@ npm start
 
 ## Getting Started
 
-Drag geodata file (tif, shp, shp zipped, geojson) onto the map 
+Drag geodata files (tif, shp, shp zipped, geojson) onto the map 

@@ -74,7 +74,7 @@ const App: React.FC = () => {
   return (
     <>
       <div className={styles.header}>
-        <div className={styles.headerText}>Drag geodata file (tif, shp, shp zipped, geojson) onto the map...</div>
+        <div className={styles.headerText}>Drag geodata files (tif, shp, shp zipped, geojson) onto the map...</div>
         {showLoader && (
           <div className={styles.headerLoader}>
             <Loader type="ThreeDots" color="#00BFFF" height={30} width={50} />
