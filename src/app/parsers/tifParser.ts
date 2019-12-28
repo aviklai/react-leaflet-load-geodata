@@ -4,11 +4,6 @@ import Parser from './base';
 import TifData from 'app/geodata/tifData';
 import * as L from 'leaflet';
 
-require('loamLib/loam-worker.js');
-require('gdalJs/gdal.js');
-require('gdalJs/gdal.wasm');
-require('gdalJs/gdal.data');
-
 export default class TifParser extends Parser {
     constructor(files: FileList, mapRef: any) {
         super(files, mapRef);

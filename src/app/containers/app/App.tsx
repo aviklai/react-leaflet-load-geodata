@@ -11,6 +11,16 @@ import createParser from 'app/parsers/parserFactory';
 import { ImageOverlay, GeoJSON } from 'react-leaflet';
 import { IMAGE_OVERLAY, GEOJSON_OVERLAY, GEO_JSON_MARKER_OPTIONS } from 'app/consts';
 import { uuidv4 } from 'app/utils';
+// @ts-ignore
+import loam from 'loam';
+
+require('loamLib/loam-worker.js');
+require('gdalJs/gdal.js');
+require('gdalJs/gdal.wasm');
+require('gdalJs/gdal.data');
+
+loam.initialize();
+
 /* This code is needed to properly load the images in the Leaflet CSS */
 // @ts-ignore
 delete L.Icon.Default.prototype._getIconUrl;
