@@ -4,8 +4,8 @@ import { GEOJSON_OVERLAY } from "app/consts";
 export default class GeoJsonData extends GeoData {
     data: any;
     public type = GEOJSON_OVERLAY;
-    constructor(data: any, zoom: number, position: any) {
-        super(zoom, position);
+    constructor(data: any, zoom: number, center: any) {
+        super(zoom, center);
         this.data = data;
     }
 }
