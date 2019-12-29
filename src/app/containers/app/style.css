@@ -25,9 +25,12 @@ body {
   display: flex;
 }
 
-.toggleLayerText {
+.zoomToLayerText {
   align-self: center;
-  margin-right: 5px;
+  margin-right: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+  user-select: none;
 }
 
 .removeLayer {
@@ -35,6 +38,7 @@ body {
   margin-left: 20px;
   text-decoration: underline;
   cursor: pointer;
+  user-select: none;
 }
 
 .mainContainer {

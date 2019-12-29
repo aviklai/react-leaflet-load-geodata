@@ -46,6 +46,10 @@ const App: React.FC = () => {
     setOverlays(newOverlays);
   }
 
+  function zoomToLayer(index: number) {
+    setZoomPosition({ zoom: overlays[index].data.zoom, position: overlays[index].data.center });
+  }
+
   function remove(index: number) {
     const newOverlays = [...overlays];
     newOverlays.splice(index, 1);
@@ -72,6 +76,12 @@ const App: React.FC = () => {
     }finally{
       setShowLoader(false);  
     }
+  }
+
+  function onMoveEnd(e: L.LeafletEvent) {
+    const center = e.target.getCenter();
+    const zoom = e.target.getZoom();
+    setZoomPosition({ zoom: zoom, position: center });
   }
 
   function pointToLayer(feature: any, latlng: any) {
@@ -111,15 +121,17 @@ const App: React.FC = () => {
             {overlays.map((overlay: any, index: number) => {
               return (
                 <div key={overlay.id} className={styles.headerSwitch}>
-                  <div className={styles.toggleLayerText}>Toggle layer</div>
-                    <Switch onChange={(checked) => handleChange(index, checked)} checked={overlay.show} />
+                  <div className={styles.zoomToLayerText} onClick={() => zoomToLayer(index)}>
+                    Zoom to
+                  </div>
+                  <Switch onChange={(checked) => handleChange(index, checked)} checked={overlay.show} />
                   <div className={styles.removeLayer} onClick={() => remove(index)}>Remove</div>
               </div>
               )
             })}
         </div>
         <div className={styles.mapContainer} onDragOver={onDragOver} onDrop={onDrop}>
-          <Map position={zoomPosition.position} zoom={zoomPosition.zoom} ref={mapRef} >
+          <Map onMoveEnd={onMoveEnd} position={zoomPosition.position} zoom={zoomPosition.zoom} ref={mapRef} >
             {overlays.map((overlay: any, index: number) => {
               if (overlay.data.type === IMAGE_OVERLAY && overlay.show) {
                 return (

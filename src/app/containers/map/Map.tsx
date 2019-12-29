@@ -5,6 +5,7 @@ interface Props {
   position: any;
   zoom: number;
   children: any;
+  onMoveEnd: (e: L.LeafletEvent) => void,
   forwardedRef: React.Ref<any>;
 }
 
@@ -14,6 +15,7 @@ const _AppMap = (props: Props) => {
         style={{ height: 'calc(100vh - 50px)', width: 'calc(100vw - 250px)' }}
         center={props.position}
         zoom={props.zoom}
+        onMoveEnd={props.onMoveEnd}
         maxZoom={30}
         preferCanvas={true}
         zoomControl={true}
