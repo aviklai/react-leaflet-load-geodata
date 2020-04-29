@@ -71,7 +71,8 @@ const App: React.FC = () => {
       const layerData = await parser.createLayer()
       setZoomPosition({ zoom: layerData.zoom, position: layerData.center });
       setOverlays((ovelays: any) => [...ovelays, {show: true, data: layerData, id: uuidv4()}]);
-    }catch {
+    }catch (ex) {
+      console.log(ex);
       setShowError(true);
     }finally{
       setShowLoader(false);  
@@ -101,7 +102,7 @@ const App: React.FC = () => {
   return (
     <>
       <div className={styles.header}>
-        <div className={styles.headerText}>Drag geodata files (tif, shp, shp zipped, geojson) onto the map...</div>
+        <div className={styles.headerText}>Drag geodata files (tif, shp, shp zipped, geojson, kml) onto the map...</div>
         {showLoader && (
           <div className={styles.headerLoader}>
             <Loader type="ThreeDots" color="#00BFFF" height={30} width={50} />
