@@ -1,6 +1,6 @@
 # react-leaflet-load-geodata
 
-Loading geodata (such as GeoTIFF, shapefiles, zipped shapfiles, geojsons, kml) on a react-leaflet map
+Loading geodata (such as GeoTIFF, shapefiles, zipped shapfiles, geojsons, kml, gpx) on a react-leaflet map
 
 ## Demo
 https://react-leaflet-load-geodata.netlify.com
