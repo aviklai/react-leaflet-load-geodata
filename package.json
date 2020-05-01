@@ -27,6 +27,7 @@
     "@types/classnames": "^2.2.7",
     "@types/history": "^4.7.2",
     "@types/jszip": "^3.1.6",
+    "@types/leaflet": "^1.5.12",
     "@types/node": "^10.12.18",
     "@types/react": "^16.8.2",
     "@types/react-dom": "^16.8.0",
@@ -69,7 +70,6 @@
   },
   "dependencies": {
     "@tmcw/togeojson": "^4.0.0",
-    "@types/leaflet": "^1.5.6",
     "classnames": "^2.2.6",
     "expose-loader": "^0.7.5",
     "jszip": "^3.2.2",
