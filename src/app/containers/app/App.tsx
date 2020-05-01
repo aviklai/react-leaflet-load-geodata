@@ -9,7 +9,7 @@ import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import createParser from 'app/parsers/parserFactory';
 import { ImageOverlay, GeoJSON } from 'react-leaflet';
-import ReactLeafletKML from '../../leafletPlugins/leafletKml';
+import ReactLeafletKML from 'react-leaflet-kml';
 import { IMAGE_OVERLAY, GEOJSON_OVERLAY, GEO_JSON_MARKER_OPTIONS, KML_OVERLAY } from 'app/consts';
 import { uuidv4 } from 'app/utils';
 // @ts-ignore
