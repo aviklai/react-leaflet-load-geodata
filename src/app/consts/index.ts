@@ -1,5 +1,6 @@
 export const IMAGE_OVERLAY = 'image';
 export const GEOJSON_OVERLAY = 'geojson';
+export const KML_OVERLAY = 'kml';
 export const GEO_JSON_MARKER_OPTIONS = {
     radius: 8,
     fillColor: '#ff7800',

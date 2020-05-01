@@ -9,7 +9,8 @@ import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import createParser from 'app/parsers/parserFactory';
 import { ImageOverlay, GeoJSON } from 'react-leaflet';
-import { IMAGE_OVERLAY, GEOJSON_OVERLAY, GEO_JSON_MARKER_OPTIONS } from 'app/consts';
+import ReactLeafletKML from '../../leafletPlugins/leafletKml';
+import { IMAGE_OVERLAY, GEOJSON_OVERLAY, GEO_JSON_MARKER_OPTIONS, KML_OVERLAY } from 'app/consts';
 import { uuidv4 } from 'app/utils';
 // @ts-ignore
 import loam from 'loam';
@@ -138,9 +139,13 @@ const App: React.FC = () => {
                 return (
                   <ImageOverlay key={overlay.id} url={overlay.data.imageUrl} bounds={overlay.data.bounds} />
                 )
-              }else if (overlay.data.type === GEOJSON_OVERLAY && overlay.show) {
+              } else if (overlay.data.type === GEOJSON_OVERLAY && overlay.show) {
                 return (
                   <GeoJSON key={overlay.id} data={overlay.data.data} pointToLayer={pointToLayer} onEachFeature={popUp} />
+                )
+              } else if (overlay.data.type == KML_OVERLAY && overlay.show) {
+                return (
+                  <ReactLeafletKML key={overlay.id} kml={overlay.data.data} />
                 )
               }
               return null;              
