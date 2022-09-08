@@ -72,7 +72,7 @@
     "@tmcw/togeojson": "^4.0.0",
     "classnames": "^2.2.6",
     "expose-loader": "^0.7.5",
-    "jszip": "^3.2.2",
+    "jszip": "^3.7.0",
     "leaflet": "^1.6.0",
     "leaflet-kml": "^1.0.1",
     "loam": "^1.0.0-alpha.10",
