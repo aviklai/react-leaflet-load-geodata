@@ -88,6 +88,6 @@
     "redux-actions": "^2.6.4",
     "shpjs": "^3.4.3",
     "threads": "^1.0.0-beta.8",
-    "xmldom": "^0.3.0"
+    "xmldom": "^0.6.0"
   }
 }
