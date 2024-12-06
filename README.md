@@ -3,7 +3,7 @@
 Loading geodata (such as GeoTIFF, shapefiles, zipped shapfiles, geojsons, kml, gpx) on a react-leaflet map
 
 ## Demo
-https://react-leaflet-load-geodata.netlify.com
+https://react-leaflet-load-geodata.netlify.app
 
 ## Installing
 ```
